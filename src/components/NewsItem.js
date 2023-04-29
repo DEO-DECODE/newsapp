@@ -2,16 +2,24 @@ import React, { Component } from "react";
 
 export default class NewsItem extends Component {
   render() {
-    let { title, description, imageUrl, newsUrl } = this.props;
+    let { title, description, imageUrl, newsUrl, date, author, source } =
+      this.props;
 
     return (
       <div className="my-3">
         <div className="card">
+          <span
+            class="position-absolute top-0 translate-middle badge rounded-pill bg-danger"
+            style={{ left: "90%", zIndex: "1" }}
+          >
+            {" "}
+            {source}
+          </span>
           <img
             src={
-              imageUrl
-                ? imageUrl
-                : "https://static.vecteezy.com/system/resources/previews/000/197/882/original/vector-news-headlines-background-with-earth-planet.jpg"
+              !imageUrl
+                ? "https://fdn.gsmarena.com/imgroot/news/21/08/xiaomi-smart-home-india-annoucnements/-476x249w4/gsmarena_00.jpg"
+                : imageUrl
             }
             className="card-img-top"
             alt="..."
@@ -19,6 +27,12 @@ export default class NewsItem extends Component {
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{description}</p>
+            <p className="card-text">
+              <small className="text-muted">
+                By {!author ? "Unknown" : author} on{" "}
+                {new Date(date).toGMTString()}
+              </small>
+            </p>
             <a
               rel="noreferrer"
               href={newsUrl}
