@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import News from "./components/News";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 export default class App extends Component {
+  pageSize=5;
   render() {
     return (
       <div>
@@ -11,77 +12,84 @@ export default class App extends Component {
           <NavBar />
           <Routes>
             <Route
-              exact path="/"
+              exact
+              path="/"
               element={
                 <News
                   key="general"
-                  pageSize={12}
+                  pageSize={this.pageSize}
                   country="in"
                   category="general"
                 />
               }
             ></Route>
             <Route
-              exact path="/business"
+              exact
+              path="/business"
               element={
                 <News
                   key="business"
-                  pageSize={12}
+                  pageSize={this.pageSize}
                   country="in"
                   category="business"
                 />
               }
             ></Route>
             <Route
-              exact path="/entertainment"
+              exact
+              path="/entertainment"
               element={
                 <News
                   key="entertainment"
-                  pageSize={12}
+                  pageSize={this.pageSize}
                   country="in"
                   category="entertainment"
                 />
               }
             ></Route>
             <Route
-              exact path="/health"
+              exact
+              path="/health"
               element={
                 <News
                   key="health"
-                  pageSize={12}
+                  pageSize={this.pageSize}
                   country="in"
                   category="health"
                 />
               }
             ></Route>
             <Route
-              exact path="/science"
+              exact
+              path="/science"
               element={
                 <News
                   key="science"
-                  pageSize={12}
+                  pageSize={this.pageSize}
                   country="in"
                   category="science"
                 />
               }
             ></Route>
             <Route
-              exact path="/sports"
+              exact
+              path="/sports"
               element={
                 <News
                   key="sports"
-                  pageSize={12}
+                  pageSize={this.pageSize}
                   country="in"
                   category="sports"
                 />
               }
             ></Route>
             <Route
-              exact path="/technology"
+              exact
+              path="/technology"
               element={
                 <News
                   key="technology"
-                  pageSize={12}
+                  pageSize={this.pageSize}
                   country="in"
                   category="technology"
                 />
