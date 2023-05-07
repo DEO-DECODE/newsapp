@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
+      <nav className="navbar fixed-top  navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
         <div className="container-fluid " style={{ margin: "2px" }}>
           <Link className="navbar-brand" to="/">
             NewsMonkey
